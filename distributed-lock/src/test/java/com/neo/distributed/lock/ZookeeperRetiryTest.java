@@ -25,30 +25,81 @@ public class ZookeeperRetiryTest {
 
     @Test
     public void test() {
+
         final ZkClientExt zkClientExt1 = new ZkClientExt(zkServers, sessionTimeout, connectionTimeout, new BytesPushThroughSerializer());
-        final SimpleZkLock lock1 = new SimpleZkLock(zkClientExt1, basePath);
+        final SimpleZkLock mutex1 = new SimpleZkLock(zkClientExt1, basePath);
 
         final ZkClientExt zkClientExt2 = new ZkClientExt(zkServers, sessionTimeout, connectionTimeout, new BytesPushThroughSerializer());
-        final SimpleZkLock lock2 = new SimpleZkLock(zkClientExt2, basePath);
+        final SimpleZkLock mutex2 = new SimpleZkLock(zkClientExt2, basePath);
 
         try {
-            lock1.acquire();
-            logger.info("Client1 locked");
+            mutex1.acquire();
+            System.out.println("Client1 locked");
             Thread client2Thd = new Thread(() -> {
                 try {
-                    lock2.acquire();
-                    logger.info("Client2 locked");
-                    lock2.release();
-                    logger.info("Client2 released lock");
+                    mutex2.acquire();
+                    System.out.println("Client2 locked");
+                    mutex2.release();
+                    System.out.println("Client2 released lock");
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
             client2Thd.start();
             Thread.sleep(5000);
-            lock1.release();
-            logger.info("Client1 released lock");
+            mutex1.release();
+            System.out.println("Client1 released lock");
+
             client2Thd.join();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test1() {
+        final ZkClientExt client = new ZkClientExt(zkServers, sessionTimeout, connectionTimeout, new BytesPushThroughSerializer());
+        final SimpleZkLock mutex = new SimpleZkLock(client, basePath);
+        try {
+            mutex.acquire();
+            System.out.println("Client1 locked");
+            Thread.sleep(10000);
+            mutex.release();
+            System.out.println("Client released lock");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test2() {
+        final ZkClientExt client = new ZkClientExt(zkServers, sessionTimeout, connectionTimeout, new
+                BytesPushThroughSerializer());
+        final SimpleZkLock mutex = new SimpleZkLock(client, basePath);
+        try {
+            mutex.acquire();
+            System.out.println("Client2 locked");
+            Thread.sleep(5000);
+            mutex.release();
+            System.out.println("Client2 released lock");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test3() {
+        final ZkClientExt client = new ZkClientExt(zkServers, sessionTimeout, connectionTimeout, new
+                BytesPushThroughSerializer());
+        final SimpleZkLock mutex = new SimpleZkLock(client, basePath);
+        try {
+            mutex.acquire();
+            System.out.println("Client3 locked");
+            mutex.release();
+            System.out.println("Client3 release lock");
         } catch (Exception e) {
             e.printStackTrace();
         }

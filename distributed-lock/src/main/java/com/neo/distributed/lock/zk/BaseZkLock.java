@@ -33,7 +33,7 @@ public class BaseZkLock {
     public BaseZkLock(ZkClientExt client, String path, String lockName) {
         this.client = client;
         this.basePath = path;
-        this.path = path.concat("/");
+        this.path = path.concat("/").concat(lockName);
         this.lockName = lockName;
     }
 
@@ -138,7 +138,7 @@ public class BaseZkLock {
 
                         @Override
                         public void handleDataDeleted(String dataPath) throws Exception {
-                            logger.info("EphemeralSequential node: %s has bean deleted.", dataPath);
+                            logger.debug("EphemeralSequential node: %s has bean deleted.", dataPath);
                             latch.countDown();
                         }
                     };
@@ -156,7 +156,7 @@ public class BaseZkLock {
 
                             latch.await(millisToWait, TimeUnit.MICROSECONDS);
                         } else {
-                            latch.wait();
+                            latch.await();
                         }
                     } catch (ZkNoNodeException e) {
                         client.unsubscribeDataChanges(previousSequencePath, previousListener);
