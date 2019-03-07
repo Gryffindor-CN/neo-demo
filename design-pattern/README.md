@@ -13,9 +13,9 @@ GoF在《设计模式：可复用面向对象软件的基础》中对23种设计
 | 交给子类 | Factory method(工厂方法模式) |  | Template Method(模板方法模式) |
 | 生成实例 | Single(单例模式)<br>Prototype(原型模式)<br>Builer(生成器模式)<br>Abstract Factory(抽象工厂模式) | - | - |
 | 分开考虑 | Bridge(桥接模式) | - | Strategy(策略模式) |
-| 一致性   | - | Composite(组合模式)，Decorator(装饰模式) | - |
-| 访问数据结构 | - | - | Visitor(访问者模式)，Chain of Responsibility(职责链模式) |
+| 一致性   | - | Composite(组合模式)<br>Decorator(装饰模式) | - |
+| 访问数据结构 | - | - | Visitor(访问者模式)<br>Chain of Responsibility(职责链模式) |
 | 简单化   | - | Facade(外观模式)  | Mediator(中介者模式) |
-| 管理状态 | - | -  | Observer(观察者模式)，Memento(备忘模式)，State(状态模式) |
-| 避免浪费 | - | Flyweight(享元模式)，Proxy(代理模式) | - |
-| 用类来表现 | - | - | Command(命令模式)，Interpreter(解释器模式) |
+| 管理状态 | - | -  | Observer(观察者模式)<br>Memento(备忘模式)<br>State(状态模式) |
+| 避免浪费 | - | Flyweight(享元模式)<br>Proxy(代理模式) | - |
+| 用类来表现 | - | - | Command(命令模式)<br>Interpreter(解释器模式) |
