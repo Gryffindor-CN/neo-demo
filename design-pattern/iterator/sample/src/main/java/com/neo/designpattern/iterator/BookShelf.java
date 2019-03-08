@@ -1,6 +1,7 @@
 package com.neo.designpattern.iterator;
 
 public class BookShelf implements Aggregate {
+
     private Book[] books;
 
     private int last;
@@ -10,21 +11,21 @@ public class BookShelf implements Aggregate {
         this.last = 0;
     }
 
+    @Override
+    public Iterator iterator() {
+        return new BookShelfIterator(this);
+    }
+
     public Book get(int index) {
         return books[index];
     }
 
     public void add(Book book) {
-        this.books[last] = book;
+        books[last] = book;
         last++;
     }
 
     public int length() {
-        return books.length;
-    }
-
-    @Override
-    public Iterator iterator() {
-        return new BookShelfIterator(this);
+        return last;
     }
 }
