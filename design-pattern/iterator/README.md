@@ -3,7 +3,7 @@
 ## 为什么要引入 Iterator 设计模式？
 为什么一定要考虑引入 **Iterator** 这种复杂的设计模式呢？如果是数组，直接使用 for 循环语句进行遍历处理不就可以了吗？为什么还要集合之外引入 **Iterator** 这个角色呢？
 
-一个重要的理由是，引入 **Iterator** 后可以将遍历与实现分享开来。在 **Sample** 例子中，请看下面的代码：
+一个重要的理由是，引入 **Iterator** 后可以将遍历与实现分离开来。在 **Sample** 例子中，请看下面的代码：
 ```java
 while (iterator.hasNext()) {
     Book b = (Book) iterator.next();
