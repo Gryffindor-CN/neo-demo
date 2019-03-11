@@ -9,7 +9,7 @@ GoF在《设计模式：可复用面向对象软件的基础》中对23种设计
 
 |          | 创建型   | 结构型               | 行为型               |
 | :------- | :------ | :------------------- | :------------------- |
-| 练下手   | -        | [Adapter(适配式模式)]()  | [Iterator(迭代器模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/iterator) |
+| 练下手   | -        | [Adapter(适配式模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/adapter)  | [Iterator(迭代器模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/iterator) |
 | 交给子类 | Factory method(工厂方法模式) | - | Template Method(模板方法模式) |
 | 生成实例 | Single(单例模式)<br>Prototype(原型模式)<br>Builer(生成器模式)<br>Abstract Factory(抽象工厂模式) | - | - |
 | 分开考虑 | Bridge(桥接模式) | - | Strategy(策略模式) |
