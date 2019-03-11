@@ -5,8 +5,8 @@
 Adapter 模式也被称为 Wrapper 模式。 Wrapper 有 “包装器”的意思，就像用精美的包装纸将普通商品包装成礼物那样，替我们把某样东西包起来，使其能够用于其他用途的东西就被称为 “包装器” 或是 “适配器”。
 
 Adapter 模式有以下两种：
-- [类适配器模式]()（使用继承的适配器）
-- [对象适配器框]()（使用委托的适配器）
+- [类适配器模式](https://github.com/305983806/neo-demo/tree/master/design-pattern/adapter/sample1)（使用继承的适配器）
+- [对象适配器框](https://github.com/305983806/neo-demo/tree/master/design-pattern/adapter/sample2)（使用委托的适配器）
 
 ## 2 Adapter 模式中的主要角色
 在 Adapter 模式中有以下主要角色
