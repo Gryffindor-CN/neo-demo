@@ -14,7 +14,7 @@ GoF在《设计模式：可复用面向对象软件的基础》中对23种设计
 | :------- | :------ | :------------------- | :------------------- |
 | 练下手   | -        | [Adapter(适配式模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/adapter)  | [Iterator(迭代器模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/iterator) |
 | 交给子类 | [Factory method(工厂方法模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/factoryMethod) | - | [Template Method(模板方法模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/templateMethod) |
-| 生成实例 | Single(单例模式)<br>Prototype(原型模式)<br>Builer(生成器模式)<br>Abstract Factory(抽象工厂模式) | - | - |
+| 生成实例 | [Singleton(单例模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/singleton)<br>[Prototype(原型模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/prototype)<br>[Builer(生成器模式)](https://github.com/305983806/neo-demo/tree/master/design-pattern/builder)<br>Abstract Factory(抽象工厂模式) | - | - |
 | 分开考虑 | Bridge(桥接模式) | - | Strategy(策略模式) |
 | 一致性   | - | Composite(组合模式)<br>Decorator(装饰模式) | - |
 | 访问数据结构 | - | - | Visitor(访问者模式)<br>Chain of Responsibility(职责链模式) |
