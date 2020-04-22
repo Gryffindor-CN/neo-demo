@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
@@ -56,6 +56,8 @@ if [ $# == 2 ]; then
     echo "The configuration file is $DEPLOY_DIR/conf/$2"
 fi
 
-nohup java ${JAVA_OPTS} ${JAVA_MEM_OPTS} -classpath ${CLASS_PATH} ${MAIN_CLASS} >> ${STDOUT_FILE} 2>&1 &
-sleep 1
-echo "Please check the STDOUT file: $STDOUT_FILE"
+java ${JAVA_OPTS} ${JAVA_MEM_OPTS} -classpath ${CLASS_PATH} ${MAIN_CLASS}
+
+#nohup java ${JAVA_OPTS} ${JAVA_MEM_OPTS} -classpath ${CLASS_PATH} ${MAIN_CLASS} >> ${STDOUT_FILE} 2>&1 &
+#sleep 1
+#echo "Please check the STDOUT file: $STDOUT_FILE"

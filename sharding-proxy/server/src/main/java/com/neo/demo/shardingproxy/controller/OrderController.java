@@ -1,6 +1,7 @@
 package com.neo.demo.shardingproxy.controller;
 
 import com.neo.demo.shardingproxy.entity.Order;
+import com.neo.demo.shardingproxy.entity.Orders;
 import com.neo.demo.shardingproxy.repository.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class OrderController {
 
     @PostMapping
     public void add() {
-        long userId = 123;
+        long userId = 333;
         String status = "ok";
 
 //        OrderItem item1 = new OrderItem();
@@ -48,7 +49,8 @@ public class OrderController {
     }
 
     @GetMapping
-    public List<Order> findAll() {
-        return orderMapper.findAll();
+    public Orders findAll() {
+        List<Order> orders = orderMapper.findAll();
+        return new Orders(orders);
     }
 }
