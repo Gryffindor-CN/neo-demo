@@ -1,0 +1,38 @@
+.DS_Store
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+classes
+temp.mv.db
+out
+
+### IntelliJ IDEA ###
+.idea
+gradle
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### Gradle ###
+caches/
+daemon/
+native/
+
+### Log ###
+*.log
+tmp/

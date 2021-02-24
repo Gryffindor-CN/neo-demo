@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        maven { url 'http://repo.iotube.cn/repository/maven-public/' }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${SPRINGBOOT}")
+    }
+}
+
+group "${GROUP_ID}"
+version "${VERSION}"
+
+subprojects {
+    group "${GROUP_ID}"
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    sourceCompatibility = "${JDK}"
+    repositories {
+        maven { url 'http://repo.iotube.cn/repository/maven-public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        jcenter()
+    }
+    dependencies {
+        compile ("org.slf4j:slf4j-api:${SLF4J}")
+        testImplementation "junit:junit:${JUNIT}"
+    }
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+}
+
+dependencies {}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
