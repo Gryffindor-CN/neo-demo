@@ -1,10 +1,12 @@
+server:
+  port: 8080
 spring:
   profiles:
     active: mixed
   datasource:
-    url: jdbc:mysql://192.168.123.241:3306/springbatch_sample?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.206.23:30006/springbatch_sample?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
-    password: 123456
+    password: password
   batch:
     schema: classpath:org/springframework/batch/core/schema-@@platform@@.sql
     initialize-schema: always
@@ -22,13 +24,13 @@ spring:
       ddl-auto: update
 partition:
   rabbit:
-    host: 192.168.123.241
-    port: 5672
+    host: 192.168.206.23
+    port: 32002
     username: admin
-    password: 123456
-    virtualHost: /app/cp
-    connRecvThreads: 5
-    channelCacheSize: 10
+    password: lonntec
+    virtualHost: /
+    connRecvThreads: 1
+    channelCacheSize: 1
 
 
 

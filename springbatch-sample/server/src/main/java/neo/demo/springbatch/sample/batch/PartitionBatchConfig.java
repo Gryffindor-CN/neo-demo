@@ -224,6 +224,8 @@ public class PartitionBatchConfig {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
         container.setQueueNames(queueName);
         container.setAutoStartup(false);
+        container.setPrefetchCount(1);
+        container.setConcurrency("1");
         return container;
     }
 
